@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>Colorizer</title>
+		<meta name="description" content="A simple, light-weight plugin that makes it easy for your customers to see your products in different colors" />
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="Revisit-after" content="20 days" />
+		<link rel="stylesheet" type="text/css" href="style2-cloth.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.productColorizer.css" />
+		<link href="http://fonts.googleapis.com/css?family=Asap:400,700" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script type="text/javascript" src="js/raphael-min.js"></script>
+		<script type="text/javascript" src="js/jquery.productColorizer.js"></script>
+		<script type="text/javascript" src="js/prettify.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="js/jscolor.js"></script>
+		
+	</head>
+	<body>
+		
+			
+		
+		
+		
+		<div id="demo" class="container clearfix">
+			
+			<div class="product-preview">
+				<div class="product">
+					<img src="images/blank_tshirt.jpg" alt="Shirt Image" />
+					<img id="mask" class="mask" src="images/shirt-mask.png" alt="Mask Image" />
+				</div>
+				<h4>Click on the box below to choose color</h4>
+				<div class="swatch">
+					
+					<a style="border:1px solid gray;" id="custom-color" class="jscolor" rel="142,8,255" title="Custom" href="#mask" title="">Custom</a>
+					<button class="ccn" style="display:none;">
+		Pick text color
+	</button>
+				</div>
+			</div>
+			
+		</div><!-- /demo -->
+		
+		
+		
+		
+		
+		<script>
+	function setTextColor(picker) {
+		document.getElementsByTagName('body')[0].style.color = '#' + picker.toString();
+	}
+	 $(document).ready(function() {
+	
+	$('.swatch #custom-color').click(function(){
+	console.info('asd');
+	});
+	$('.ccn').click(function(){
+	$('.jscolor').addClass('jscolor-active');
+	var a = $('.swatch #custom-color').css('backgroundColor');
+	console.log(a);
+	var rgb = a;
+
+rgb = rgb.substring(4, rgb.length-1)
+         .replace(/ /g, '')
+         .split(',');
+
+$('.swatch #custom-color').attr('rel',rgb);
+	});
+	});
+	</script>
+	</body>
+</html>
